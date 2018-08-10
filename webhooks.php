@@ -18,13 +18,18 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			$text = $event['source']['userId'];
 			$text2 = $event['message']['text'];
+			if (strncmp($text2, 'reg:', strlen('reg:')) === 0){
+				$txt = 'userId:'$text.'   outlet:'.substr($text2, strlen('reg:'));
+			}else{
+				$txt = 'userId:'$text.'   message:'.$text2;
+			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text2
+				'text' => $txt
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
