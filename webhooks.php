@@ -20,11 +20,11 @@ if (!is_null($events['events'])) {
 			$text2 = $event['message']['text'];
 			$txt = 'userId:'.$text.'   message:'.$text2;
 			if (strncmp(strtolower($text2), 'reg:', strlen('reg:')) === 0){
-				$txt = 'userId:'.$text.'   outlet:'.substr($text2, strlen('reg:'));
+				$txt = 'Register success - userId:'.$text.'   outlet:'.substr($text2, strlen('reg:'));
 			}elseif (strtolower($text2) === 'vrp'){
-				$txt = 'your VRP is xxxxx';
+				$txt = 'your VRP score is 1999.99 points';
 			}else{
-				$txt = 'userId:'.$text.'   message:'.$text2;
+				$txt = 'echo : '.$text2;
 			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
