@@ -18,10 +18,11 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			$text = $event['source']['userId'];
 			$text2 = $event['message']['text'];
+			$txt = 'userId:'.$text.'   message:'.$text2;
 			if (strncmp($text2, 'reg:', strlen('reg:')) === 0){
-				$txt = 'userId:'$text.'   outlet:'.substr($text2, strlen('reg:'));
+				$txt = 'userId:'.$text.'   outlet:'.substr($text2, strlen('reg:'));
 			}else{
-				$txt = 'userId:'$text.'   message:'.$text2;
+				$txt = 'userId:'.$text.'   message:'.$text2;
 			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
