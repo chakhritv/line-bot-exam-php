@@ -21,8 +21,6 @@ if (!is_null($events['events'])) {
 			$txt = 'userId:'.$text.'   message:'.$text2;
 			if (strncmp(strtolower($text2), 'reg:', strlen('reg:')) === 0){
 				$txt = 'userId:'.$text.'   outlet:'.substr($text2, strlen('reg:'));
-			}elseif (strtolower($text2) === 'vrp'){
-				$txt = 'your VRP is xxx'.
 			}else{
 				$txt = 'userId:'.$text.'   message:'.$text2;
 			}
