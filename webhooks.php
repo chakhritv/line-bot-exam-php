@@ -24,7 +24,7 @@ if (!is_null($events['events'])) {
 			}elseif (strtolower($text2) === 'vrp'){
 				$txt = 'your VRP score is 1999.99 points';
 			}else{
-				$txt = 'echo : '.$text2;
+				$txt = 'echo.. : '.$text2;
 			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
