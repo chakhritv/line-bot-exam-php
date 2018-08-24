@@ -21,38 +21,21 @@ if (!is_null($events['events'])) {
 			$txt = 'userId:'.$text.'   message:'.$text2;
 			if (strncmp(strtolower($text2), 'reg:', strlen('reg:')) === 0){
 				$txt = 'Register success - userId:'.$text.'   outlet:'.substr($text2, strlen('reg:'));
-				// Build message to reply back
-				$messages = [
-					'type' => 'text',
-					'text' => $txt
-				];
 			}elseif (strtolower($text2) === 'vrp'){
 				$txt = 'your VRP score is 1999.99 points';
-				// Build message to reply back
-				$messages = [
-					'type' => 'text',
-					'text' => $txt
-				];
 			}elseif (strtolower($text2) === 'quick reply'){
 				$txt = 'quick reply';
-				// Build message to reply back
-				$quickReply = {
-					'items': []
-				}
-				$messages = [
-					'type' => 'text',
-					'text' => $txt
-				];
 			}else{
 				$txt = 'echo.. : '.$text2;
-				// Build message to reply back
-				$messages = [
-					'type' => 'text',
-					'text' => $txt
-				];
 			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
+			
+				// Build message to reply back
+				$messages = [
+					'type' => 'text',
+					'text' => $txt
+				];
 
 
 		}else{
