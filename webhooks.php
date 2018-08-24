@@ -20,7 +20,8 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 			$txt = 'type:' . $event['type'];
-			$txt = $txt.'source:' . json_encode($event['source']);
+			$a = json_encode($event['source']);
+			$txt = $txt.'source:' .$a; 
 			/*
 			$txt = $txt.'source-type:' . $event['source']['type'];
 			$txt = $txt.' userId:' . $event['source']['userId'];
