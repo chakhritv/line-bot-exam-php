@@ -55,6 +55,7 @@ if (!is_null($events['events'])) {
 			];
 		}
 		*/
+		$replyToken = $event['replyToken'];
 		$txt = $events;
 		
 		// Make a POST Request to Messaging API to reply to sender
