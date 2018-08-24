@@ -20,14 +20,10 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 			$txt = 'type:' . $event['type'];
-			$a = json_encode($event['source']);
-			$txt = $txt.'source:' .$a; 
-			/*
 			$txt = $txt.'source-type:' . $event['source']['type'];
 			$txt = $txt.' userId:' . $event['source']['userId'];
 			$txt = $txt.' groupId:' . $event['source']['groupId'];
-			$txt = $txt.' roomId :' . $event['source']['roomId '];
-			*/
+			$txt = $txt.' roomId :' . $event['source']['roomId'];
 			
 			// Build message to reply back
 			$messages = [
@@ -41,9 +37,9 @@ if (!is_null($events['events'])) {
 			//VANG : Udc5308c251363df098d95f43c50d64c8
 			//DANG : U92c2370eae4f98f137feb8f1d6bba976
 			$url = 'https://api.line.me/v2/bot/message/push';
-			$to = []
+			$vang = 'Udc5308c251363df098d95f43c50d64c8';
 			$data = [
-				'to' => $event['source']['userId'],
+				'to' => $vang,
 				'messages' => [$messages],
 			];
 			$post = json_encode($data);
