@@ -33,16 +33,20 @@ if (!is_null($events['events'])) {
 			
 			// Make a POST Request to Messaging API to reply to sender
 			//$url = 'https://api.line.me/v2/bot/message/reply';
+			//$url = 'https://api.line.me/v2/bot/message/push';
 			
 			//VANG : Udc5308c251363df098d95f43c50d64c8
 			//DANG : U92c2370eae4f98f137feb8f1d6bba976
 			//ROOM : Rf7da6481fb4660a656528ddb30822906
 			
-			$url = 'https://api.line.me/v2/bot/message/push';
+			$url = 'https://api.line.me/v2/bot/message/multicast';
 			$vang = 'Udc5308c251363df098d95f43c50d64c8';
+			$dang = 'U92c2370eae4f98f137feb8f1d6bba976';
+			$multi = [$vang, $dang];
 			$room = 'Rf7da6481fb4660a656528ddb30822906';
+			
 			$data = [
-				'to' => $room,
+				'to' => $multi,
 				'messages' => [$messages],
 			];
 			$post = json_encode($data);
