@@ -19,10 +19,10 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
-			$txt = 'source-type:' + $event['source']['type'];
-			$txt = $txt+' userId:' + $event['source']['userId'];
-			$txt = $txt+' groupId:' + $event['source']['groupId'];
-			$txt = $txt+' roomId :' + $event['source']['roomId '];
+			$txt = 'source-type:' . $event['source']['type'];
+			$txt = $txt.' userId:' . $event['source']['userId'];
+			$txt = $txt.' groupId:' . $event['source']['groupId'];
+			$txt = $txt.' roomId :' . $event['source']['roomId '];
 			
 			// Build message to reply back
 			$messages = [
