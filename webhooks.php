@@ -24,6 +24,7 @@ if (!is_null($events['events'])) {
 			$txt = $txt.' userId:' . $event['source']['userId'];
 			$txt = $txt.' groupId:' . $event['source']['groupId'];
 			$txt = $txt.' roomId :' . $event['source']['roomId'];
+			$txt = $txt.' text :' . $event['message']['text'];
 			
 			// Build message to reply back
 			$messages = [
