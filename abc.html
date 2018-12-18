@@ -15,10 +15,10 @@
         document.getElementById("mess").value = err.message;
       }); 
     }
-    function ck(){
+    function ck(msg){
       liff.sendMessages([{
         type: 'text',
-        text: 'submit:'
+        text: 'submit:'+msg
       }]).then(() => {
         liff.closeWindow();
       }).catch((err) => {
@@ -35,7 +35,7 @@ hello abc<br/>
   <input type="text" id="mess" value="message" style="width: 100%;"/><br/>
   <hr/>
   คุณต้องการ Yes หรือ No ?? <br/>
-  <button onclick="ck()">Yes</button>
-  <button onclick="ck()">No</button>
+  <button onclick="ck('Yesss')">Yes</button>
+  <button onclick="ck('Nooo')">No</button>
 </body>
 </html>
