@@ -6,11 +6,11 @@
     function init(){
       liff.init(async (data) => {
         let profile = await liff.getProfile();
-        document.getElementById("disname").value(profile.displayName);
-        document.getElementById("userid").value(profile.userId);
+        document.getElementById("disname").value = profile.displayName;
+        document.getElementById("userid").value = profile.userId;
       },
       err => {
-        document.getElementById("mess").value(err.message);
+        document.getElementById("mess").value = err.message;
       }); 
     }
   </script>
