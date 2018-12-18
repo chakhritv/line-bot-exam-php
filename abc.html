@@ -20,6 +20,8 @@
         text: msg
       }]).then(() => {
         liff.closeWindow();
+      }).catch((err) => {
+        console.log('error', err);
       });
     }
   </script>
