@@ -14,6 +14,14 @@
         document.getElementById("mess").value = err.message;
       }); 
     }
+    function ck(msg){
+      liff.sendMessages([{
+        type: 'text',
+        text: msg
+      }]).then(() => {
+        liff.closeWindow();
+      });
+    }
   </script>
   <title>abc page</title>
 <header>
@@ -23,7 +31,8 @@ hello abc<br/>
   <input type="text" id="userid" value="uid" style="width: 100%;"/><br/>
   <input type="text" id="mess" value="message" style="width: 100%;"/><br/>
   <hr/>
-  <input type="text" id="in1" />
-  <button>Submit</button>
+  คุณต้องการ Yes หรือ No ?? <br/>
+  <button onclick="ck('Y')">Yes</button>
+  <button onclick="ck('N')">No</button>
 </body>
 </html>
