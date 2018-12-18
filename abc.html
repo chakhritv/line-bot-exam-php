@@ -5,8 +5,15 @@
   <title>abc page</title>
 <header>
 <body>
-hello abc
+hello abc<br/>
   <input type="text" id="disname" value="name"/><br/>
   <input type="text" id="userid" value="uid"/><br/>
+  <script>
+    liff.init(async (data) => {
+      let profile = await liff.getProfile();
+      document.getElementById("disname").value(profile.displayName);
+      document.getElementById("userid").value(profile.userId);
+    }); 
+  </script>
 </body>
 </html>
