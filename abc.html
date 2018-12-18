@@ -2,22 +2,25 @@
 <html>
 <header>
   <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+  <script>
+    function init(){
+      liff.init(async (data) => {
+        let profile = await liff.getProfile();
+        document.getElementById("disname").value(profile.displayName);
+        document.getElementById("userid").value(profile.userId);
+      },
+      err => {
+        document.getElementById("mess").value(err.message);
+      }); 
+    }
+  </script>
   <title>abc page</title>
 <header>
-<body>
+<body onload="init()">
 hello abc<br/>
   <input type="text" id="disname" value="name"/><br/>
   <input type="text" id="userid" value="uid"/><br/>
   <input type="text" id="mess" value="message"/><br/>
-  <script>
-    liff.init(async (data) => {
-      let profile = await liff.getProfile();
-      document.getElementById("disname").value(profile.displayName);
-      document.getElementById("userid").value(profile.userId);
-    },
-    err => {
-      document.getElementById("mess").value(err.message);
-    }); 
-  </script>
+  
 </body>
 </html>
