@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <header>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
   <script>
     function init(){
@@ -15,9 +16,9 @@
       }); 
     }
     function ck(msg){
-      liff.postMessages([{
+      liff.sendMessages([{
         type: 'text',
-        text: msg
+        text: 'submit:' + msg
       }]).then(() => {
         liff.closeWindow();
       }).catch((err) => {
